@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose"
 
-const UserDataSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     Name: String,
-    FName: String,
+    FullName: String,
     Address: String,
-    PhonNo: String,
-    Email: String,
-    TimeSlot: DateTime,
+    PhoneNumber: String,
+    Email_Id: String,
 })
 
-export default mongoose.model("UserDetails",UserDataSchema)
+export default mongoose.model("UserDetails",UserSchema)
+
