@@ -180,7 +180,6 @@ app.post("/details", function (req, res) {
         console.log(error);
     }
 })
-const deleteRequest =
     app.post("/delete", function (req, res) {
     const dbdata = req.body
     var myquery = { Phone: dbdata.Phone };
