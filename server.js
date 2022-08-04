@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import Cors from 'cors';
-import UserDetails from './UserDetails.js';
+import UserDetails from './Users.js';
 import * as cron from 'node-cron';
 import axios from 'axios';
 import request from 'request';
@@ -181,20 +181,29 @@ app.post("/details", function (req, res) {
     }
 })
     app.post("/delete", function (req, res) {
+        console.log('delete api');
     const dbdata = req.body
     var myquery = { Phone: dbdata.Phone };
+    try {
     UserDetails.deleteOne(myquery, function (err, obj) {
         if (err) throw err;
         console.log("document deleted");
     });
+} catch(error) {
+    console.log(error);
+}
 });
 
 app.post("/update", function (req, res) {
     const dbdata = req.body
     var myquery = { Phone: dbdata.Phone };
+    try{
     UserDetails.updateOne(myquery, function (err, obj) {
         if (err) throw err;
         console.log("document updated");
     });
+} catch{
+    console.log(error);
+}
 });
 app.listen(port)
