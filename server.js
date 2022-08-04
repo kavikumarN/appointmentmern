@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import Cors from 'cors';
-import UserDetails from './UserDetail.js';
+import UserDetails from './UserDetails.js';
 import * as cron from 'node-cron';
 import axios from 'axios';
 import request from 'request';
